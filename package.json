@@ -1,0 +1,22 @@
+{
+  "name": "techtestpayroll",
+  "version": "1.0.0",
+  "description": "Solution of a tech test for a company in the RH / payroll software industry.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simon-attila-fr/TechTestPayroll.git"
+  },
+  "keywords": [
+    "payroll"
+  ],
+  "author": "Attila Simon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simon-attila-fr/TechTestPayroll/issues"
+  },
+  "homepage": "https://github.com/simon-attila-fr/TechTestPayroll#readme"
+}
