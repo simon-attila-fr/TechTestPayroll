@@ -1,18 +1,24 @@
 # TechTestPayroll
--------- FR --------
--------- ENG below --------
+## -------- FR --------
+## -------- ENG below --------
 
 C'est une application qui permet de définir des périodes dans un an.
 
-Comment installer en npm?
+### Comment installer en npm?
+
 
 $ git clone git@github.com:simon-attila-fr/TechTestPayroll.git
+
 $ cd TestTechPayroll
+
 $ npm install
 
-Comment lancer les test unitaires ?
+
+### Comment lancer les test unitaires ?
+
 
 $ npm test (test global)
+
 $ test par fichier : npm test index.test.js   OU  npm test tools.test.js
 
 
@@ -23,20 +29,26 @@ Dans cette application, les jours dans la semaine sont considérées comme jours
 Auteur
 Attila Simon
 
--------- ENG --------
+## -------- ENG --------
 
 This application allows to define periods in a yea range.
 
-How to install it in npm?
+### How to install it in npm?
 
 $ git clone git@github.com:simon-attila-fr/TechTestPayroll.git
+
 $ cd TestTechPayroll
+
 $ npm install
 
-How to start unit tests?
+
+### How to start unit tests?
+
 
 $ npm test (test global)
+
 $ test par fichier : npm test index.test.js   OU  npm test tools.test.js
+
 
 ** This version works only in one year range. **
 
