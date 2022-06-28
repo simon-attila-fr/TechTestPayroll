@@ -1,5 +1,6 @@
 const { monthsGenerator, getStartingAndEndDay, findOneDate, getPeriode, monthsInRange } = require('./tools');
 
+
 // Tests for the monthsGenerator function
 test("Should throw an error if year is not an integer", () => {
     expect(() => {

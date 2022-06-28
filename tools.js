@@ -53,12 +53,12 @@ function getStartingAndEndDay(date1, date2) {
     }
 
     if (new Date(date1).toLocaleString() === "Invalid Date" || new Date(date2).toLocaleString() === "Invalid Date") {
-        throw TypeError("Please verify the month and the day in your dates! Format: mm-dd-yyyy")
+        throw new Error("Please verify the month and the day in your dates! Format: mm-dd-yyyy")
     }
 
-    if (new Date(date1).toLocaleString() === "Invalid Date" || new Date(date2).toLocaleString() === "Invalid Date") {
-      throw TypeError("Please verify the month and the day in your dates! Format: mm-dd-yyyy")
-    }
+    // if (new Date(date1).toLocaleString() === "Invalid Date" || new Date(date2).toLocaleString() === "Invalid Date") {
+    //   throw TypeError("Please verify the month and the day in your dates! Format: mm-dd-yyyy")
+    // }
     // -------------------
 
     let startingDate = new Date(date1);

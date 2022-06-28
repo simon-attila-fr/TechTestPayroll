@@ -1,6 +1,35 @@
 const { monthsGenerator, getStartingAndEndDay, findOneDate, getPeriode, monthsInRange } = require('./tools');
 
-function payrollPeriod(date1, date2, year) {
+function payrollPeriodTotal(date1, date2, year) {
+    let yearReference = monthsGenerator(year);
+    let startAndEnd = getStartingAndEndDay(date1, date2);
+    let period = getPeriode(startAndEnd.startingDate, startAndEnd.endDate, yearReference);
+
+    return period.length;
+}
+
+function payrollPeriodWorkdays(date1, date2, year) {
+    let yearReference = monthsGenerator(year);
+    let startAndEnd = getStartingAndEndDay(date1, date2);
+    let period = getPeriode(startAndEnd.startingDate, startAndEnd.endDate, yearReference);
+
+    let periodTotal = period.length;
+    return period.filter(e => e.workday).length;
+}
+
+function monthsTotalInPeriod(date1, date2, year) {
+    let yearReference = monthsGenerator(year);
+    let startAndEnd = getStartingAndEndDay(date1, date2);
+    let period = getPeriode(startAndEnd.startingDate, startAndEnd.endDate, yearReference);
+
+    return monthsInRange(period)
+}
+
+console.log(payrollPeriodTotal("01-01-2022", "12-31-2022", 2022));
+console.log(payrollPeriodWorkdays("01-01-2022", "12-31-2022", 2022));
+console.log(monthsTotalInPeriod("01-01-2022", "12-31-2022", 2022));
+
+function payrollFull(date1, date2, year) {
     let yearReference = monthsGenerator(year);
     let startAndEnd = getStartingAndEndDay(date1, date2);
     let period = getPeriode(startAndEnd.startingDate, startAndEnd.endDate, yearReference);
@@ -13,5 +42,7 @@ function payrollPeriod(date1, date2, year) {
     Période mensuelles :${monthsInRange(period)}`
 }
 
-console.log(payrollPeriod("01-29-2022", "02-01-2022", 2022));
-console.log(payrollPeriod("05-01-2022", "07-29-2022", 2022));
+console.log(payrollFull("01-29-2022", "02-01-2022", 2022));
+console.log(payrollFull("05-01-2022", "07-29-2022", 2022));
+
+module.exports = payrollPeriodTotal;
