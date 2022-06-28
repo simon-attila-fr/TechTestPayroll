@@ -10,7 +10,7 @@ const months = require('./month.js');
 function monthsGenerator(year) {
 
     if (!Number.isInteger(year)){
-        throw new Error("The year should be an integer.");
+        throw TypeError("The year should be an integer.");
     }
     // February :)
     if (year % 4 === 0) {
@@ -44,7 +44,7 @@ function getStartingAndEndDay(date1, date2) {
 
     // Error handling ------
     if (typeof date1 !== "string" || typeof date2 !== "string") {
-        throw new Error("Both of the dates should be a string in the following format: mm-dd-yyyy")
+        throw TypeError("Both of the dates should be a string in the following format: mm-dd-yyyy")
     }
 
     if (date1.split("-").map(e => Number(e) ? e : null).join("").length !== date1.length-2 ||
