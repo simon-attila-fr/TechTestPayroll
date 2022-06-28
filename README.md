@@ -21,6 +21,10 @@ $ npm test (test global)
 
 $ test par fichier : npm test index.test.js   OU  npm test tools.test.js
 
+### Comment voir l'écriture ?
+
+$ Il faut d'abord enlever le commentaire de console.log dans index.js (ligne 76), puis "node index.js" dans le terminal.
+
 
 ** Cette version marche uniquement sur un seul an. **
 
@@ -48,6 +52,10 @@ $ npm install
 $ npm test (test global)
 
 $ test par fichier : npm test index.test.js   OU  npm test tools.test.js
+
+### How to see the result ?
+
+$ First, you need to delete the slashes before the console.log in line 76, then type "node index.js" in the terminal.
 
 
 ** This version works only in one year range. **

@@ -73,6 +73,6 @@ function payrollFull(date1, date2, year) {
     Période mensuelles :${monthsInRange(period)}`
 }
 
-//console.log(payrollFull("01-01-2021", "12-31-2021", 2021));
+// console.log(payrollFull("01-01-2021", "12-31-2021", 2021));
 
 module.exports = { payrollPeriodTotal, payrollPeriodWorkdays, monthsTotalInPeriod };
