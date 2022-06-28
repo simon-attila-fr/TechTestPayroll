@@ -1,6 +1,22 @@
 const { monthsGenerator, getStartingAndEndDay, findOneDate, getPeriode, monthsInRange } = require('./tools');
 
+// This function checks if there are fidderent years in the range.
+// This version works only in one year range.
+
+function yearCheck(date1, date2, year) {
+    if (new Date(date1).getFullYear() !== year || new Date(date2).getFullYear() !== year) {
+        throw new Error("Sorry, this version works only within one year range :(")
+    }
+}
+
+// This function can define the number of days included in a range.
+// It accepts three arguments: starting date, end, year.
+// It returns an integer.
+
 function payrollPeriodTotal(date1, date2, year) {
+
+    yearCheck(date1, date2, year);
+
     let yearReference = monthsGenerator(year);
     let startAndEnd = getStartingAndEndDay(date1, date2);
     let period = getPeriode(startAndEnd.startingDate, startAndEnd.endDate, yearReference);
@@ -8,16 +24,29 @@ function payrollPeriodTotal(date1, date2, year) {
     return period.length;
 }
 
+// This function defines the number of workdays in a range.
+// It accepts three arguments: starting date, end, year.
+// It returnes an integer.
+
 function payrollPeriodWorkdays(date1, date2, year) {
+
+    yearCheck(date1, date2, year);
+
     let yearReference = monthsGenerator(year);
     let startAndEnd = getStartingAndEndDay(date1, date2);
     let period = getPeriode(startAndEnd.startingDate, startAndEnd.endDate, yearReference);
 
-    let periodTotal = period.length;
     return period.filter(e => e.workday).length;
 }
 
+// This function defines the months included in a range.
+// It accepts three arguments: starting date, end, year.
+// It returnes the name of the months as a string.
+
 function monthsTotalInPeriod(date1, date2, year) {
+
+    yearCheck(date1, date2, year);
+
     let yearReference = monthsGenerator(year);
     let startAndEnd = getStartingAndEndDay(date1, date2);
     let period = getPeriode(startAndEnd.startingDate, startAndEnd.endDate, yearReference);
@@ -25,11 +54,13 @@ function monthsTotalInPeriod(date1, date2, year) {
     return monthsInRange(period)
 }
 
-console.log(payrollPeriodTotal("01-01-2022", "12-31-2022", 2022));
-console.log(payrollPeriodWorkdays("01-01-2022", "12-31-2022", 2022));
-console.log(monthsTotalInPeriod("01-01-2022", "12-31-2022", 2022));
+// This function gives a detailed response.
+// It accepts three arguments: starting date, end, year.
 
 function payrollFull(date1, date2, year) {
+
+    yearCheck(date1, date2, year);
+
     let yearReference = monthsGenerator(year);
     let startAndEnd = getStartingAndEndDay(date1, date2);
     let period = getPeriode(startAndEnd.startingDate, startAndEnd.endDate, yearReference);
@@ -42,7 +73,6 @@ function payrollFull(date1, date2, year) {
     Période mensuelles :${monthsInRange(period)}`
 }
 
-console.log(payrollFull("01-29-2022", "02-01-2022", 2022));
-console.log(payrollFull("05-01-2022", "07-29-2022", 2022));
+//console.log(payrollFull("01-01-2021", "12-31-2021", 2021));
 
-module.exports = payrollPeriodTotal;
+module.exports = { payrollPeriodTotal, payrollPeriodWorkdays, monthsTotalInPeriod };
