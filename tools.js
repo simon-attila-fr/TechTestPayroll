@@ -49,11 +49,15 @@ function getStartingAndEndDay(date1, date2) {
 
     if (date1.split("-").map(e => Number(e) ? e : null).join("").length !== date1.length-2 ||
     date2.split("-").map(e => Number(e) ? e : null).join("").length !== date2.length-2) {
-        throw new Error("There should be numbers between the dashes in the following format: mm-dd-yyyy")
+        throw TypeError("There should be numbers between the dashes in the following format: mm-dd-yyyy")
     }
 
     if (new Date(date1).toLocaleString() === "Invalid Date" || new Date(date2).toLocaleString() === "Invalid Date") {
-        throw new Error("Please verify the month and the day in your dates! Format: mm-dd-yyyy")
+        throw TypeError("Please verify the month and the day in your dates! Format: mm-dd-yyyy")
+    }
+
+    if (new Date(date1).toLocaleString() === "Invalid Date" || new Date(date2).toLocaleString() === "Invalid Date") {
+      throw TypeError("Please verify the month and the day in your dates! Format: mm-dd-yyyy")
     }
     // -------------------
 
