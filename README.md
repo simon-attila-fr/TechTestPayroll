@@ -7,7 +7,7 @@ C'est une application qui permet de définir des périodes dans un an.
 ### Comment installer en npm?
 
 
-$ git clone git@github.com:simon-attila-fr/TechTestPayroll.git
+$ https://github.com/simon-attila-fr/TechTestPayroll.git
 
 $ cd TestTechPayroll
 
@@ -35,7 +35,7 @@ This application allows to define periods in a yea range.
 
 ### How to install it in npm?
 
-$ git clone git@github.com:simon-attila-fr/TechTestPayroll.git
+$ https://github.com/simon-attila-fr/TechTestPayroll.git
 
 $ cd TestTechPayroll
 
